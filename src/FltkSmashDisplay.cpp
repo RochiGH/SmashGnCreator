@@ -38,7 +38,19 @@ public:
     ~DemoTable() { }
 };
 
-// Handle drawing all cells in table
+/**
+ * DemoTable::draw_cell
+ * draw_cell 
+ *
+ * @param context
+ * @param R
+ * @param C
+ * @param X
+ * @param Y
+ * @param W
+ * @param H
+ */
+
 void DemoTable::draw_cell(TableContext context, 
 			  int R, int C, int X, int Y, int W, int H)
 {
@@ -110,6 +122,14 @@ void DemoTable::draw_cell(TableContext context,
     }
 }
 
+/**
+ * table_cb
+ * table_cb callback 
+ *
+ * @param o
+ * @param data
+ */
+
 void table_cb(Fl_Widget* o, void* data)
 {
     Fl_Table *table = (Fl_Table*)data;
@@ -121,6 +141,14 @@ void table_cb(Fl_Widget* o, void* data)
 	(int)Fl::event(),
 	(int)Fl::event_clicks());
 }
+
+/**
+ * mygl_cb
+ * mygl callback 
+ *
+ * @param o
+ * @param data
+ */
 
 void mygl_cb(Fl_Widget* o, void* data)
 {
@@ -137,12 +165,34 @@ void mygl_cb(Fl_Widget* o, void* data)
 */
 }
 
+/**
+ * mygl_cb
+ * mygl callback 
+ *
+ * @param o
+ * @param data
+ */
+
 void button_cb( Fl_Widget* obj , void* )
 {
     obj->label( "OFF" );
     obj->resize( 10,0,150,20 ); 
     obj->redraw();
 }
+
+void button_cbDebug( Fl_Widget* obj , void* )
+{
+    obj->label( "DEBUG" );
+    obj->resize( 10,0,150,20 ); 
+    obj->redraw();
+}
+
+/**
+ * fltkSmashDisplay
+ * Main display method , it manages the FL run and views running.
+ *
+ * @param 
+ */
 
 int fltkSmashDisplay()
 {
@@ -183,12 +233,17 @@ int fltkSmashDisplay()
 
     Fl_Window win(1000, 500, "Smash Graph Node Debug");
     MyGlWindow mygl(10, 20, win.w()-20, win.h()-30);
-    Fl_Button* but = new Fl_Button( 10, 0, 150, 20, "UPDATE RTK LOG" );
+    Fl_Button* butGnRtk = new Fl_Button( 10, 0, 150, 20, "UPDATE RTK LOG" );
+    Fl_Button* butGnPoints = new Fl_Button( 150, 0, 150, 20, "UPDATE GN LOG" );
+    Fl_Button* butDebug = new Fl_Button( 300, 0, 150, 20, "UPDATE GPS LOG" );
 
     win.end();
     win.resizable(mygl);
 
-    but->callback(( Fl_Callback* ) button_cb );
+    butGnRtk->callback(( Fl_Callback* ) button_cb );
+    butGnPoints->callback(( Fl_Callback* ) button_cb );
+    butDebug->callback(( Fl_Callback* ) button_cbDebug );
+
     mygl.callback(mygl_cb, (void*)&mygl);
     mygl.when(FL_WHEN_NOT_CHANGED|FL_WHEN_RELEASE_ALWAYS);
 

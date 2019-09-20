@@ -1,2 +1,0 @@
-/usr/bin/ar qc libUi.a  CMakeFiles/Ui.dir/fltkDrawTableInfo.cpp.o
-/usr/bin/ranlib libUi.a
