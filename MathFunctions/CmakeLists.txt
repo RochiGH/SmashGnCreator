@@ -1,0 +1,3 @@
+# Adding a math library to the Tutorial pro
+add_library(MathFunctions mysqrt.cxx)
+

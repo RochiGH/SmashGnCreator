@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/build",
+  "command": "/usr/bin/clang++   -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./include -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./MathFunctions  -g   -std=gnu++11 -o CMakeFiles/SmashGnCreator.dir/src/SmashGnCreator.cxx.o -c /Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/SmashGnCreator.cxx",
+  "file": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/SmashGnCreator.cxx"
+},
+{
+  "directory": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/build",
+  "command": "/usr/bin/clang++   -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./include -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./MathFunctions  -g   -std=gnu++11 -o CMakeFiles/SmashGnCreator.dir/src/FltkSmashDisplay.cpp.o -c /Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/FltkSmashDisplay.cpp",
+  "file": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/FltkSmashDisplay.cpp"
+},
+{
+  "directory": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/build",
+  "command": "/usr/bin/clang++   -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./include -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./MathFunctions  -g   -std=gnu++11 -o CMakeFiles/SmashGnCreator.dir/src/fltkDrawOgl.cpp.o -c /Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/fltkDrawOgl.cpp",
+  "file": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/fltkDrawOgl.cpp"
+},
+{
+  "directory": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/build",
+  "command": "/usr/bin/clang++   -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./include -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./MathFunctions  -g   -std=gnu++11 -o CMakeFiles/SmashGnCreator.dir/src/GnNode.cpp.o -c /Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/GnNode.cpp",
+  "file": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/src/GnNode.cpp"
+},
+{
+  "directory": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/build/MathFunctions",
+  "command": "/usr/bin/clang++   -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./include -I/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/./MathFunctions  -g   -std=gnu++11 -o CMakeFiles/MathFunctions.dir/mysqrt.cxx.o -c /Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/MathFunctions/mysqrt.cxx",
+  "file": "/Users/roccoferrante/Dropbox/Coding/C++/SmashGnCreator/MathFunctions/mysqrt.cxx"
+}
+]
