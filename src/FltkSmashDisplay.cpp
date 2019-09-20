@@ -166,24 +166,47 @@ void mygl_cb(Fl_Widget* o, void* data)
 }
 
 /**
- * mygl_cb
- * mygl callback 
+ * butGnRtk_cb
+ * butGnRtk callback 
  *
  * @param o
  * @param data
  */
 
-void button_cb( Fl_Widget* obj , void* )
+void butGnRtk_cb( Fl_Widget* obj , void* )
 {
     obj->label( "OFF" );
     obj->resize( 10,0,150,20 ); 
     obj->redraw();
 }
 
-void button_cbDebug( Fl_Widget* obj , void* )
+/**
+ * butGnPoints_cb
+ * butGnPoints callback 
+ *
+ * @param o
+ * @param data
+ */
+
+void butGnPoints_cb( Fl_Widget* obj , void* )
+{
+    obj->label( "Graph Node" );
+    obj->resize( 160,0,150,20 ); 
+    obj->redraw();
+}
+
+/**
+ * button_cbDebug
+ * button_cbDebug callback 
+ *
+ * @param o
+ * @param data
+ */
+
+void butDebug_cb( Fl_Widget* obj , void* )
 {
     obj->label( "DEBUG" );
-    obj->resize( 10,0,150,20 ); 
+    obj->resize( 310,0,150,20 ); 
     obj->redraw();
 }
 
@@ -234,15 +257,15 @@ int fltkSmashDisplay()
     Fl_Window win(1000, 500, "Smash Graph Node Debug");
     MyGlWindow mygl(10, 20, win.w()-20, win.h()-30);
     Fl_Button* butGnRtk = new Fl_Button( 10, 0, 150, 20, "UPDATE RTK LOG" );
-    Fl_Button* butGnPoints = new Fl_Button( 150, 0, 150, 20, "UPDATE GN LOG" );
-    Fl_Button* butDebug = new Fl_Button( 300, 0, 150, 20, "UPDATE GPS LOG" );
+    Fl_Button* butGnPoints = new Fl_Button( 160, 0, 150, 20, "UPDATE GN LOG" );
+    Fl_Button* butDebug = new Fl_Button( 310, 0, 150, 20, "UPDATE GPS LOG" );
 
     win.end();
     win.resizable(mygl);
 
-    butGnRtk->callback(( Fl_Callback* ) button_cb );
-    butGnPoints->callback(( Fl_Callback* ) button_cb );
-    butDebug->callback(( Fl_Callback* ) button_cbDebug );
+    butGnRtk->callback(( Fl_Callback* ) butGnRtk_cb );
+    butGnPoints->callback(( Fl_Callback* ) butGnPoints_cb );
+    butDebug->callback(( Fl_Callback* ) butDebug_cb );
 
     mygl.callback(mygl_cb, (void*)&mygl);
     mygl.when(FL_WHEN_NOT_CHANGED|FL_WHEN_RELEASE_ALWAYS);

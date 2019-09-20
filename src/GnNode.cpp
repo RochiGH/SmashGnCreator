@@ -17,8 +17,19 @@ double tiltFactor = -150.0;
 double startRowX = -700;
 double rowsize = 100;
 
+/**
+ * GnNodeSmashRtkCreator
+ * GnNodeSmashRtkCreator read the RTK log file and build up the input GnNode vectors 
+ * that should be used to calculate the graph. Every RTK node is references to the 
+ * start ROW and the end ROW poles , like L0,H0 Ln,Hn where L stands for Low and H for High
+ * keeping the south,west priority.
+ *
+ * @param file path ???
+ * @param file name ???
+ */
+
 void GnNodeSmashRtkCreator() {
-    // Draw working field graph 
+    // TODO : read from a file and create the GnRtk vector.
 
 #ifdef CASTELLANI
     Node L0 {10.57285563, 43.59387513};
@@ -66,6 +77,19 @@ void GnNodeSmashRtkCreator() {
     }
 }
 
+/**
+ * GnNodeSmashGnCreator
+ * GnNodeSmashGnCreator read the RTK node , that is references to the 
+ * start ROW and the end ROW poles , like L0,H0 Ln,Hn where L stands for Low and H for High
+ * keeping the south,west priority and create the 4 gn nodes related to that ROW node.
+ * 2 are start/end Row nodes placed on left or right and 2 are nodes for maneuvres.
+ *
+ * @param node1
+ * @param node2
+ * @param row
+ * @param agriBotSize 
+ */
+
 void GnNodeSmashGnCreator(const GnNode& node1, const GnNode& node2, int row, int agriBotSize) {
     
     double n0x, n0y;
@@ -102,8 +126,8 @@ void GnNodeSmashGnCreator(const GnNode& node1, const GnNode& node2, int row, int
         x8 = n3x - agriBotSize;
         y8 = - (1 / m) * ( x8 - n3x ) + n3y;
     } 
-    // TODO : missing parallel axes algorithm .
 
+    // TODO : missing parallel axes algorithm .
     GnNode LMR {x1, y1, 0 ,0, row, "LMR"};
     gnPoints.push_back(LMR);
     GnNode LML {x2, y2, 0 ,0, row, "LML"};
